@@ -105,8 +105,11 @@ class Board:
         return True
 
     def is_over(self):
-        if self.original_board_lines[r][c] == '*':
-            return False
+        for r in range(self.row_count):
+             for c in range(self.col_count):
+                if self.original_board_lines[r][c] == 'O':
+                    return False
+        return True
 
 def main():
     board = Board(['..#####.',
